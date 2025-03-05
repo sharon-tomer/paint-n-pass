@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@layer components {
+  /* Animation for toast notifications */
+  @keyframes enter {
+    0% {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes leave {
+    0% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-enter {
+    animation: enter 0.3s ease-out forwards;
+  }
+
+  .animate-leave {
+    animation: leave 0.3s ease-in forwards;
+  }
+
+  /* Animation for phone rotation */
+  @keyframes rotatePhone {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-90deg);
+    }
+    75% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-rotate-phone {
+    animation: rotatePhone 2s infinite;
+  }
+
+  /* Canvas interactions */
+  .touch-none {
+    touch-action: none;
+  }
+
+  /* Full height app */
+  html,
+  body {
+    height: 100%;
+  }
+
+  /* Gradient backgrounds for player identification */
+  .bg-player-1 {
+    background: linear-gradient(to right, #cf3f3f, #e46767);
+  }
+
+  .bg-player-2 {
+    background: linear-gradient(to right, #6539a0, #8a65c5);
+  }
+
+  /* Prevent iOS overscroll */
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  /* Prevent text selection */
+  .no-select {
+    user-select: none;
+  }
+}
